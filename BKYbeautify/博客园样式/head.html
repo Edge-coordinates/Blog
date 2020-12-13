@@ -1,0 +1,96 @@
+<div class="c-notice">
+  <div>欢迎来到Zou-Wang的博客</div>
+</div>
+<div class="c-portrait">
+<a href="https://www.cnblogs.com/zouwangblog/p/11157339.html ">
+ <img class="site-master-avatar" itemprop="image" src="//pic.cnblogs.com/avatar/1646268/20190628143903.png" alt="Zou-Wang"style="height:120px;padding:10px;box-sizing:border-box;z-index:2; border-radius: 50%;"">
+</a>
+  <div style="font-size: 25px">Zou-Wang</div>
+  <div style="font-size: 16px">晓看天色暮看云，行也思君，坐也思君</div>
+</div>
+
+
+<!--添加导航栏-->
+<script type="text/javascript">
+<!--离开页面改变title-->
+var time;
+var normar_title=document.title;
+document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState == 'hidden') {
+         clearTimeout(time);        
+         document.title = '客官请留步ε=ε=ε=┏(゜ロ゜;)┛';
+    } else {
+        document.title = '你终于回来了(。・∀・)ノ';
+        time=setTimeout(function(){ document.title = normar_title; }, 3000);
+
+}
+});
+
+ $(document).ready(function(){
+
+    if(window.location.href==='https://www.cnblogs.com/zouwangblog/')	{
+         document.title = '欢迎来到Zou-Wang的博客';
+}
+      
+      $("#navList").append('<li><a id="blog_nav_myyoulian" class="menu" href="https://www.cnblogs.com/zouwangblog/p/11177049.html">友链</a></li><li><a id="blog_nav_myguanyu" class="menu" href="https://www.cnblogs.com/zouwangblog/p/11157339.html">关于</a></li>')  
+});
+</script>
+
+<!--添加导航栏end-->
+
+<!--顶部加载条-->
+  <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/zouwangblog/nprogress.css">
+  <script src="https://blog-static.cnblogs.com/files/zouwangblog/nprogress.js"></script>
+<script>
+ $(document).ready(function(){
+NProgress.start();
+NProgress.done();
+});
+</script>
+
+<!--MyHeart-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+  <style>
+
+    .myheart {
+      color: red;
+      font-size: 35px;
+    }
+
+    .throb:before {
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+
+      text-align: center;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1em;
+
+      -webkit-animation-name: scaleDraw; /*关键帧名称*/
+      -webkit-animation-timing-function: ease-in-out; /*动画的速度曲线*/
+      -webkit-animation-iteration-count: infinite; /*动画播放的次数*/
+      -webkit-animation-duration: 5s; /*动画所花费的时间*/
+
+    }
+
+    @keyframes scaleDraw { /*定义关键帧、scaleDrew是需要绑定到选择器的关键帧名称*/
+      0% {
+        transform: scale(1); /*开始为原始大小*/
+      }
+      25% {
+        transform: scale(1.5); /*放大1.1倍*/
+      }
+      50% {
+        transform: scale(1);
+      }
+      75% {
+        transform: scale(1.5);
+      }
+    }
+
+  </style>
+<!--MyHeart-->
