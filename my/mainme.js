@@ -1,3 +1,4 @@
+//Toretto
 (function ($) {
 	$.extend({
 		silence: (options) => {
@@ -50,16 +51,16 @@
 					]
 				},
 				topInfo: {
-					title: 'Hi,Friends!',
-					text: 'You got to put the past behind you before you can move on.',
-					github: "",
+					title: "Hi, Friends!",
+					text: "You got to put the past behind you before you can move on.",
+					github: "https://github.com/Edge-coordinates",
 					weibo: "",
 					telegram: "",
-					music: "",
+					music: "https://music.163.com/#/user/home?id=1863507930",
 					twitter: "",
-					zhihu: "",
+					zhihu: "https://www.zhihu.com/people/Edge-coordinates",
 					mail: "",
-				}
+				  },
 			};
 
 			this.version = '1.0.0';
@@ -153,7 +154,7 @@
 				})
 				$('.chinese-font').css('display', 'none')
 			});
-			<!--离开页面改变title-->
+			//<!--离开页面改变title-->
 			var time;
 			var normar_title = document.title;
 			document.addEventListener('visibilitychange', function () {
@@ -161,7 +162,7 @@
 					clearTimeout(time);
 					document.title = '桥豆麻袋(＃°Д°)';
 				} else {
-					document.title = '你终于回来了(。???)ノ';
+					document.title = '你终于回来了(。・∀・)ノ';
 					time = setTimeout(function () {
 						document.title = normar_title;
 					}, 3000);
@@ -243,7 +244,7 @@
 			const blogTitle = $(this.cnblogs.blogTitle).find('h1 a').html();
 			const autherName = $(this.cnblogs.publicProfile).find('a:eq(0)').html();
 			let $title = $('head').find('title');
-			$title.html($title.html().replace(`荒原拾荒者 | ${autherName}`, `${blogTitle}`));
+			$title.html($title.html().replace(`春原庄的雪 | ${autherName}`, `${blogTitle}`));
 
 			// Build a tags button on navbar.
 			let $navList = $(this.cnblogs.navList);
@@ -273,7 +274,7 @@
 			});
 
 
-			$("#navList").append('<li><a id="blog_nav_myyoulian"  class= "menu" href="https://www.cnblogs.com/Edge-coordinates/tag/">标签</a><i></i></li><li><a id="blog_nav_myzanshang" class="menu" href="https://www.cnblogs.com/Edge-coordinates/">赞赏</a><i></i></li><li><a id="blog_nav_myguanyu" class="menu" href="">关于</a><i></i></li>');
+			$("#navList").append('<li><a id="blog_nav_myyoulian" class="menu" href="https://www.cnblogs.com/zouwangblog/articles/11177049.html">友链</a><i></i></li><li><a id="blog_nav_myzanshang" class="menu" href="https://www.cnblogs.com/zouwangblog/articles/11340077.html">赞赏</a><i></i></li><li><a id="blog_nav_myguanyu" class="menu" href="">关于</a><i></i></li>');
 			//添加标签icon
 			$('#blog_nav_myhome').prepend('<i class="fa fa-fort-awesome" aria-hidden="true"></i>');
 			$('#blog_nav_contact').prepend('<i class="fa fa-address-book-o" aria-hidden="true"></i>');
@@ -469,7 +470,7 @@
 						`<div class="esa-catalog">
                         <div class="esa-catalog-contents">
                             <div class="esa-catalog-title">目录</div>
-                            <a class="esa-catalog-close">?</a>
+                            <a class="esa-catalog-close">✕</a>
                         </div>
                     </div>`);
 
@@ -654,42 +655,42 @@
                 <button class="esa-toolbar-follow">捕获</button>
             </div>`);
 
-			// let $btnGotop = $('.esa-toolbar-gotop');
-			// let $btnContents = $('.esa-toolbar-contents');
+			let $btnGotop = $('.esa-toolbar-gotop');
+			let $btnContents = $('.esa-toolbar-contents');
 			let $btnFollow = $('.esa-toolbar-follow');
 
-			// if (catalog.enable) {
-			// 	$btnContents.on('click', () => {
-			// 		let $catalog = $('.esa-catalog-contents');
-			// 		if ($catalog.css('display') == 'none') {
-			// 			$catalog.fadeIn();
-			// 		} else {
-			// 			$catalog.hide();
-			// 		}
-			// 	}).hover(() => {
-			// 		$btnContents.find('.tips').show();
-			// 	}, () => {
-			// 		$btnContents.find('.tips').hide();
-			// 	});
-			// } else {
-			// 	$btnContents.remove();
-			// }
-			//
-			// $btnGotop.on('click', () => {
-			// 	$(window).scrollTop(0);
-			// }).hover(() => {
-			// 	$btnGotop.find('.tips').show();
-			// }, () => {
-			// 	$btnGotop.find('.tips').hide();
-			// });
-			//
-			// $(window).scroll(function () {
-			// 	if (this.scrollY > 200) {
-			// 		$btnGotop.fadeIn();
-			// 	} else {
-			// 		$btnGotop.fadeOut();
-			// 	}
-			// });
+			if (catalog.enable) {
+				$btnContents.on('click', () => {
+					let $catalog = $('.esa-catalog-contents');
+					if ($catalog.css('display') == 'none') {
+						$catalog.fadeIn();
+					} else {
+						$catalog.hide();
+					}
+				}).hover(() => {
+					$btnContents.find('.tips').show();
+				}, () => {
+					$btnContents.find('.tips').hide();
+				});
+			} else {
+				$btnContents.remove();
+			}
+			
+			$btnGotop.on('click', () => {
+				$(window).scrollTop(0);
+			}).hover(() => {
+				$btnGotop.find('.tips').show();
+			}, () => {
+				$btnGotop.find('.tips').hide();
+			});
+			
+			$(window).scroll(function () {
+				if (this.scrollY > 200) {
+					$btnGotop.fadeIn();
+				} else {
+					$btnGotop.fadeOut();
+				}
+			});
 
 			$btnFollow.on('click', () => {
 				loadLink(location.protocol + "//common.cnblogs.com/scripts/artDialog/ui-dialog.css", () => {
@@ -746,7 +747,7 @@
 					'<ruby><span class="sakuraso">荒</span><span class="no">の</span><span class="shironeko">原</span>' +
 					'<rt class="chinese-font">荒原的拾荒人</rt></ruby></a></span>' +
 					'</div>'
-			$('body').prepend(title);
+			$('body').prepend(title)
 
 
 		}
@@ -822,7 +823,7 @@
 					`<div class="main-header">` +
 					`</div>` +
 					`<div class="focusinfo no-select">` +
-					`       <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="Hi, Toretto!">${config.title}</h1>` +
+					`       <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="Hi, Friends!">${config.title}</h1>` +
 					`       <div class="header-info"><p><i class="fa fa-quote-left"></i> ${config.text} <i class="fa fa-quote-right"></i></p>` +
 					`           <div class="top-social_v2">` +
 					`              <li id="bg-pre"><img class="flipx" src="https://img2018.cnblogs.com/blog/1646268/201908/1646268-20190808103709869-648245711.png"></li>` +
@@ -898,42 +899,52 @@
 		 * 构建首页随笔列表
 		 */
 		setHomeSuiBiList() {
-			let article_list = document.getElementsByClassName('day');
-			let author = $(this.cnblogs.publicProfile).find('a:eq(0)').html() //作者
-			for (let i = article_list.length - 1; i >= 0; i--) {
-				let time = $('.day').find('div.dayTitle')[i].textContent.replace('年', '-').replace('月', '-').replace('日', ''); //获取年月日
-				let postTitle = $('.day').find('div.postTitle')[i].innerHTML;//<a class="postTitle2" href="https://www.cnblogs.com/zouwangblog/p/11194299.html">[置顶] 博客园美化</a>
-				let readMore = $('.day').find('a.c_b_p_desc_readmore')[i].href;//https://www.cnblogs.com/zouwangblog/p/11194299.html
-				let content = $('.day').find('div.c_b_p_desc')[i].textContent.replace('阅读全文', ''); //摘要
-				let desc = $('.day').find('div.postDesc')[i].textContent;//posted @ 2019-07-16 13:27 ふじさんの雪 阅读 (3073) 评论 (56)<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11194299" rel="nofollow">编辑</a>
-				let readNum = desc.substring(desc.indexOf("(") + 1, desc.indexOf(")")); //阅读量
-				let comNum = desc.substring(desc.lastIndexOf("(") + 1, desc.lastIndexOf(")")); //评论量
-				let bianji = $('.day').find('div.postDesc')[i].firstElementChild.href; //获取编辑链接 https://i.cnblogs.com/EditPosts.aspx?postid=11194299
-				let url
-				let desc_img = article_list[i].getElementsByClassName('desc_img')[0];
-				if (desc_img !== undefined) {
-					url = desc_img.src;//https://img2018.cnblogs.com/blog/1646268/201908/1646268-20190807204419622-1770363151.jpg
-				} else {
-					url = 'https://pic.downk.cc/item/5fa282ee1cd1bbb86b1f9e13.jpg'
+		let article_list = $('.day');
+    	let author = $(this.cnblogs.publicProfile).find('a:eq(0)').html() //作者
+		for(let i = article_list.length-1;i>=0;i--)
+		{
+			let time = $('.day').find('div.dayTitle')[i].textContent.replace('年', '-').replace('月', '-').replace('日', ''); //获取年月日
+			let PostTitles = $(article_list[i]).find('.postTitle');
+			let readMores = $(article_list[i]).find('a.c_b_p_desc_readmore');
+			let descs = $(article_list[i]).find('.postDesc');
+			let infos = $(article_list[i]).find('.postCon');
+			let contents = $(article_list[i]).find('.c_b_p_desc');
+			for(let j=PostTitles.length-1;j>=0;j--)
+			{
+				let readMore = $(readMores[j]).context.href;
+				let postTitle = $(PostTitles[j]).context.innerHTML;
+				let desc = $(descs[j]).text();
+				let readNum = desc.substring(desc.indexOf("(") + 1, desc.indexOf(")"));
+				let comNum = desc.substring(desc.lastIndexOf("(") + 1, desc.lastIndexOf(")"));
+				let edit =  $(descs[j]).find('a')[0].href;
+				let url = $(infos[j]).find('img')[0];
+				let content = contents[j].textContent.replace('阅读全文','');
+				if(url!=undefined)
+				{
+					url = url.src;
+				}else{
+					url = url = 'https://pic.downk.cc/item/5fa282ee1cd1bbb86b1f9e13.jpg';   
 				}
 				let html = `<div class="post post-list-thumb post-list-show">` +
-						`  <div class="post-thumb"> <a href="${readMore}"> <img class="lazyload" src="${url}"  data-src="${url}"> </a></div>` +
-						`  <div class="post-content-wrap">` +
-						`   <div class="post-content">` +
-						`     <div class="post-date"> <i class="iconfont icon-time"></i>发布于 ${time}</div>` +
-						`     <div class="post-title">${postTitle}</div>` +
-						`     <div class="post-meta"> <span><i class="iconfont icon-attention"></i>${readNum} 热度</span> <span class="comments-number"><i class="iconfont icon-mark"></i>${comNum} 条评论</span> <span><i class="iconfont icon-cc-user"></i><a href="https://www.cnblogs.com/Edge-coordinates/p/13916824.html"></a>${author}</span></div>` +
-						`     <div class="float-content"><p>${content}</p>` +
-						`        <div class="post-bottom">` +
-						`           <a href="${readMore}" class="button-normal"><i class="iconfont icon-gengduo"></i></a>` +
-						`           <a href="${bianji}" class="button-normal"><i class="iconfont icon-bianji"></i></a>` +
-						`        </div>` +
-						`     </div>` +
-						`  </div>` +
-						` </div>` +
-						`</div>`;
+				`  <div class="post-thumb"> <a href="${readMore}"> <img class="lazyload" src="${url}"  data-src="${url}"> </a></div>` +
+				`  <div class="post-content-wrap">` +
+				`   <div class="post-content">` +
+				`     <div class="post-date"> <i class="iconfont icon-time"></i>发布于 ${time}</div>` +
+				`     <div class="post-title">${postTitle}</div>` +
+				`     <div class="post-meta"> <span><i class="iconfont icon-attention"></i>${readNum} 热度</span> <span class="comments-number"><i class="iconfont icon-mark"></i>${comNum} 条评论</span> <span><i class="iconfont icon-cc-user"></i><a href="https://www.cnblogs.com/zouwangblog/p/11157339.html"></a>${author}</span></div>` +
+				`     <div class="float-content"><p>${content}</p>` +
+				`        <div class="post-bottom">` +
+				`           <a href="${readMore}" class="button-normal"><i class="iconfont icon-gengduo"></i></a>` +
+				`           <a href="${edit}" class="button-normal"><i class="iconfont icon-bianji"></i></a>` +
+				`        </div>` +
+				`     </div>` +
+				`  </div>` +
+				` </div>` +
+				`</div>`;
 				$('.forFlow').prepend(html);
 			}
+		}
+	
 			$('.post-list-thumb:odd').addClass('post-list-thumb-left')
 
 			//构建notice
@@ -961,7 +972,7 @@
 			let post_view_count = $('#post_view_count').text() //阅读数
 			if (window.location.href.indexOf('articles') === -1) {
 				var header =
-						`<p class="entry-census"><span><a href="https://www.cnblogs.com/Edge-coordinates/"><img src="//pic.cnblogs.com/avatar/2173652/20201005215146.png"></a></span><span><a href="https://www.cnblogs.com/Edge-coordinates/">Edge-coordinates</a></span><span class="bull">·</span>${post_date}<span class="bull">·</span>${post_view_count} 次阅读</p>`;
+						`<p class="entry-census"><span><a href="https://www.cnblogs.com/Edge-coordinates/"><img src="https://pic.cnblogs.com/avatar/2173652/20201005215146.png"></a></span><span><a href="https://www.cnblogs.com/Edge-coordinates/">Edge-coordinates</a></span><span class="bull">·</span>${post_date}<span class="bull">·</span>${post_view_count} 次阅读</p>`;
 				$('.pattern-header').append(header)
 				$('.pattern-center').addClass('single-center')
 				$('.pattern-header').addClass('single-header')
